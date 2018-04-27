@@ -16,7 +16,7 @@ restService.use(bodyParser.json());
 restService.post("/newservice", function(req, res) {
   
   return res.json({
-    speech: req.body.queryResult.parameters.any,
+    speech: "test",
     source: "webhook-echo-sample"
   });
 });
