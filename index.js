@@ -22,7 +22,6 @@ restService.post("/newservice", function(req, res) {
       : "No products found";
   return res.json({
     speech: speech,
-    displayText: speech,
     source: "webhook-echo-sample"
   });
 });
