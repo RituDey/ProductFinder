@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "google-spreadsheet": "^2.0.4"
+    "google-spreadsheet": "^2.0.4",
+    "express": "^4.13.4"
   },
   "devDependencies": {},
   "scripts": {
