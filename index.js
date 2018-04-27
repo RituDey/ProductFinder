@@ -14,14 +14,9 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/newservice", function(req, res) {
-  var speech =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.any
-      ? req.body.queryResult.parameters.any
-      : "No products found";
+  
   return res.json({
-    speech: speech,
+    speech: req.body.queryResult.parameters.any,
     source: "webhook-echo-sample"
   });
 });
