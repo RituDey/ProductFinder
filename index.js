@@ -42,10 +42,9 @@ function getData () {
                                                 var data = [];
                                                                                
                                                     for (let row1 in data1) {
-														var prod = {};
-														
-														prod.product = data1[row1]['product'];
-														prod.qty = data1[row1]['qty'];
+								var prod = {};
+								prod.product = data1[row1]['product'];
+                                                                prod.qty = data1[row1]['qty'];
 																									
                                                             data.push(prod);
                                                         }
