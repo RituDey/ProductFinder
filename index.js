@@ -14,14 +14,14 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/newservice", function(req, res) {
-  var product =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.any
-      ? req.body.result.parameters.any
+  var speech =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.any
+      ? req.body.queryResult.parameters.any
       : "No products found";
   return res.json({
-    speech: product,
+    speech: speech,
     displayText: speech,
     source: "webhook-echo-sample"
   });
