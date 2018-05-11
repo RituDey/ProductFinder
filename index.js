@@ -50,12 +50,12 @@ restService.post('/finditem', function(req, res) {
 																					   
 			for (let row1 in data1) {
 				var prod = {};
-				var string = "";
+				var string1 = "";
 				if(input == data1[row1].product){
 					
 					prod.aisle = data1[row1]['aisle'];
 					data.push(prod);
-					string =   string + data1[row1].product + " can be found in "  +  data +  ' ; ';
+					string1 =   string1 + data1[row1].product + " can be found in "  +  data +  ' ; ';
 				}
 				//console.log(data1[row1]['product']);
 				//prod.product = data1[row1]['product'];
@@ -65,7 +65,7 @@ restService.post('/finditem', function(req, res) {
 				}
 				//console.log(data);
 	       return res.json({
-                    resp.speech: " Sure. let me check and provide the detail... " +string,
+                    resp.speech: " Sure. let me check and provide the detail... " +string1,
                     source: 'webhook-echo-one',
          
                 });
