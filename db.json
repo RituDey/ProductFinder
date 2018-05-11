@@ -1,0 +1,53 @@
+{
+  "employess": [
+    {
+      "id": 1,
+      "name": "Suzzane",
+      "shift": "9-1",
+      "mobile": 81212881221,
+      "status": 1
+    },
+    {
+      "id": 2,
+      "name": "Courtney",
+      "shift": "9-1",
+      "mobile": 12121223322,
+      "status": 0
+    },
+    {
+      "id": 3,
+      "name": "Eric",
+      "shift": "1-5",
+      "mobile": 23232323232,
+      "status": 1
+    },
+    {
+      "id": 4,
+      "name": "chan",
+      "shift": "1-5",
+      "mobile": 43434343434,
+      "status": 1
+    },
+    {
+     "id": 5,
+      "name": "anurag",
+      "shift": "12-5",
+      "mobile": 98888888882,
+      "status": 0
+    },
+    {
+      "id": 6,
+      "name": "inba",
+      "shift": "5-10",
+      "mobile": 87777232324,
+      "status": 0
+    },
+    {
+      "id": 7,
+      "name": "nila",
+      "shift": "5-10",
+      "mobile": 54545454546,
+      "status": 1
+    }
+  ]
+}
