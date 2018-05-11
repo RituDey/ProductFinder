@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const restService = express();
-var dateFormat = require('dateformat');
+//var dateFormat = require('dateformat');
 var http = require('https');
 //var os = require('os');
 
@@ -65,7 +65,7 @@ restService.post('/finditem', function(req, res) {
 				}
 				//console.log(data);
 	       return res.json({
-                    speech: " Sure. let me check and provide the detail... " +string,
+                    resp.speech: " Sure. let me check and provide the detail... " +string,
                     source: 'webhook-echo-one',
          
                 });
