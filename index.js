@@ -56,7 +56,8 @@ restService.post('/finditem', function(req, res) {
 					prod.aisle = data1[row1]['aisle'];
 					//data.push(prod);
 					
-					var myJSON = prod.toString();
+					var myJSON = JSON.stringify(prod);
+					myJSON = myJSON.replace(/[{}]/g, '');
 					string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
 				}
 				//console.log(data1[row1]['product']);
