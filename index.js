@@ -47,7 +47,7 @@ restService.post('/finditem', function(req, res) {
     
 			var data1 = rows1;
 			var data = [];
-			var string = "";																		   
+			var string1 = "";																		   
 			for (let row1 in data1) {
 				var prod = {};
 				
@@ -55,7 +55,8 @@ restService.post('/finditem', function(req, res) {
 					
 					prod.aisle = data1[row1]['aisle'];
 					data.push(prod);
-					string = string + data1[row1].product + " can be found in "  +  data +  ' ; ';
+					String string2 = Arrays.toString(data);
+					string1 = string1 + data1[row1].product + " can be found in "  +  string2 +  ' ; ';
 				}
 				//console.log(data1[row1]['product']);
 				//prod.product = data1[row1]['product'];
@@ -65,7 +66,7 @@ restService.post('/finditem', function(req, res) {
 				}
 				//console.log(data);
 	       return res.json({
-                    speech: " Sure. Let me provide the list .  "+string,
+                    speech: string,
                     source: 'webhook-echo-one',
          
                 });
