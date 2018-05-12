@@ -46,7 +46,7 @@ restService.post('/finditem', function(req, res) {
     else {
     
 			var data1 = rows1;
-			//var data = [];
+			var data = [];
 			var string1 = "";																		   
 			for (let row1 in data1) {
 				var prod = {};
@@ -54,10 +54,10 @@ restService.post('/finditem', function(req, res) {
 				if(input == data1[row1].product){
 					
 					prod.aisle = data1[row1]['aisle'];
-					//data.push(prod);
+					data.push(prod);
 					
-					var myJSON = JSON.stringify(prod);
-					string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
+					var myJSON = JSON.stringify(data);
+					string1 = string1 + data1[row1].product + " can be found in "  +  data +  ' ; ';
 				}
 				//console.log(data1[row1]['product']);
 				//prod.product = data1[row1]['product'];
