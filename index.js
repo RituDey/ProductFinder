@@ -57,19 +57,15 @@ restService.post('/finditem', function(req, res) {
 				if(newinput == newproductname){
 					
 					prod.aisle = data1[row1]['aisle'];
-					//data.push(prod);
+					console.log (prod.aisle);
 					
 					var myJSON = JSON.stringify(prod);
 					myJSON = myJSON.replace(/[{}]/g, '');
 					string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
 				}
-				//console.log(data1[row1]['product']);
-				//prod.product = data1[row1]['product'];
-				//prod.qty = data1[row1]['qty'];
-																											
-					//data.push(prod);
-				}
-				//console.log(data);
+				
+		}
+				
 	       return res.json({
                     speech: string1,
                     source: 'webhook-echo-one',
