@@ -23,6 +23,7 @@ restService.post('/finditem', function(req, res) {
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
  var input = req.body.result.parameters.any ;
+ var newinput = input.toLowerCase();
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -50,8 +51,10 @@ restService.post('/finditem', function(req, res) {
 			var string1 = "";																		   
 			for (let row1 in data1) {
 				var prod = {};
+				var productname = data1[row1].product;
+				var newproductname = productname.toLowerCase();
 				
-				if(input == data1[row1].product){
+				if(newinput == newproductname){
 					
 					prod.aisle = data1[row1]['aisle'];
 					//data.push(prod);
