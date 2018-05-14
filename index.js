@@ -20,8 +20,8 @@ restService.get('/finditem', function(req, res) {
  var GoogleSpreadsheet = require('google-spreadsheet');
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
-//var input = req.body.result.parameters.param1.toLowerCase() ;
-var input = "bags";
+var input = req.body.result.parameters.param1.toLowerCase() ;
+//var input = "bags";
  //var myString = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
@@ -55,19 +55,19 @@ var input = "bags";
 					prod.aisle = aisleno;
 					 var myString = JSON.stringify(prod);
 					myString = myString.replace(/[{}]/g, '');
-					string1 = string1 + data1[row1].product + " can be found in "  +  myString +  ' ; ';
+					//string1 = string1 + data1[row1].product + " can be found in "  +  myString +  ' ; ';
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				        myString = JSON.stringify(prod);
 				       myString = myString.replace(/[{}]/g, '');
-				       string1 =  " It is available "  +  myString +  ' ; ';
+				      // string1 =  " It is available "  +  myString +  ' ; ';
 				}
 				
 		}
 				
 	       return res.json({
                     
-			"speech": string1,
+			"speech": "",
 			/*"messages": [
 			{
 			"type": 0,
@@ -78,12 +78,12 @@ var input = "bags";
 			"speech": "my second response"
 			}
 			],*/
-		      /* "contextOut": [
+		       "contextOut": [
 			{
 			"name": "webhookparam",
 		        "lifespan":2,
 			"parameters":myString
-			}],*/
+			}],
 			
 			"source": "webhook-echo-one",
 		       
