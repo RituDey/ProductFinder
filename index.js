@@ -21,7 +21,7 @@ restService.get('/finditem', function(req, res) {
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
 //var input = req.body.result.parameters.param1.toLowerCase() ;
-var input = "Bags";
+var input = "bags";
  //var myString = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
