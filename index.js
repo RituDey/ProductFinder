@@ -22,7 +22,7 @@ restService.get('/finditem', function(req, res) {
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
 var input = req.body.result.parameters.param1.toLowerCase() ;
 //var input = "bags";
- //var myString = "";
+ var myString = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -53,7 +53,7 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod.aisle = aisleno;
-					 var myString = JSON.stringify(prod);
+					 myString = JSON.stringify(prod);
 					myString = myString.replace(/[{}]/g, '');
 					//string1 = string1 + data1[row1].product + " can be found in "  +  myString +  ' ; ';
 				}else if (input == productname && aisleno.includes("aisle")) {
