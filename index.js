@@ -20,7 +20,7 @@ restService.post('/finditem', function(req, res) {
  var GoogleSpreadsheet = require('google-spreadsheet');
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
- var input = req.body.result.parameters.any.toLowerCase() ;
+ var input = req.body.result.parameters.param1.toLowerCase() ;
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -76,7 +76,7 @@ restService.post('/finditem', function(req, res) {
 			"speech": "my second response"
 			}
 			],*/
-		       "contexts": [
+		       "contextOut": [
 			{
 			"name": "webhookparam",
 		        "lifespan":2,
