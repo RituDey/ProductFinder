@@ -69,11 +69,11 @@ restService.post('/finditem', function(req, res) {
 			"messages": [
 			{
 			"type": 0,
-			"speech": “my first response”
+			"speech": "my first response"
 			},
 			{
 			"type": 0,
-			"speech": “my second response”
+			"speech": "my second response"
 			}
 			],
 			"source": "webhook-echo-one",
