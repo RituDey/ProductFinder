@@ -65,7 +65,7 @@ restService.post('/finditem', function(req, res) {
 				
 	       return res.json({
                     
-			"speech": "hello",
+			"speech": "",
 			"messages": [
 			{
 			"type": 0,
