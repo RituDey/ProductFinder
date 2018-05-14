@@ -53,7 +53,7 @@ restService.post('/finditem', function(req, res) {
 				var productname = data1[row1].product;
 				var newproductname = productname.toLowerCase();
 				var aisleno = data1[row1]['aisle'];
-				 if(newinput == newproductname){
+				 if(newinput == newproductname && !(aisleno.includes("aisle"))){
 					prod.aisle = aisleno;
 					var myJSON = JSON.stringify(prod);
 					myJSON = myJSON.replace(/[{}]/g, '');
