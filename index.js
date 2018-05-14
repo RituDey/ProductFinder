@@ -51,13 +51,13 @@ restService.post('/finditem', function(req, res) {
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod.aisle = aisleno;
-					var myJSON = JSON.stringify(prod);
-					myJSON = myJSON.replace(/[{}]/g, '');
+					var myString = JSON.stringify(prod);
+					myString = myString.replace(/[{}]/g, '');
 					//string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
-				       var myJSON = JSON.stringify(prod);
-				       myJSON = myJSON.replace(/[{}]/g, '');
+				       var myString = JSON.stringify(prod);
+				       myString = myString.replace(/[{}]/g, '');
 				       //string1 =  " It is available "  +  myJSON +  ' ; ';
 				}
 				
@@ -80,7 +80,7 @@ restService.post('/finditem', function(req, res) {
 			{
 			"name": "webhookparam",
 		        "lifespan":2,
-			"parameters":"myJSON"
+			"parameters":myString
 			}],
 			
 			"source": "webhook-echo-one"
