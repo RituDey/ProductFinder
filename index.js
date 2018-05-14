@@ -78,7 +78,7 @@ restService.post('/finditem', function(req, res) {
 			],*/
 		       //"parameters":{"param1":"Hi","qty":2,"param2":"Hello"},
 		       "qty":3,
-		       "param1":"Hi",
+		       "param1":"",
 			"source": "webhook-echo-one"
 		       
 			
