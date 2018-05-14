@@ -12,7 +12,7 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-restService.post('/finditem', function(req, res) {
+restService.get('/finditem', function(req, res) {
     //console.log('=============' + req.body.result.action)
     
  var resp = {},
