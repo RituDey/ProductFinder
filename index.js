@@ -21,6 +21,7 @@ restService.post('/finditem', function(req, res) {
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
  var input = req.body.result.parameters.param1.toLowerCase() ;
+ var myString = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -51,12 +52,12 @@ restService.post('/finditem', function(req, res) {
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod.aisle = aisleno;
-					var myString = JSON.stringify(prod);
+					 myString = JSON.stringify(prod);
 					myString = myString.replace(/[{}]/g, '');
 					//string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
-				       var myString = JSON.stringify(prod);
+				        myString = JSON.stringify(prod);
 				       myString = myString.replace(/[{}]/g, '');
 				       //string1 =  " It is available "  +  myJSON +  ' ; ';
 				}
