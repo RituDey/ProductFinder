@@ -12,7 +12,7 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-restService.get('/finditem', function(req, res) {
+restService.post('/finditem', function(req, res) {
     //console.log('=============' + req.body.result.action)
     
  var resp = {},
@@ -85,7 +85,7 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 			"parameters":myString
 			}],*/
 			
-			"source": "webhook-echo-one"
+			"source": "webhook-echo-one",
 		       
 			
          
