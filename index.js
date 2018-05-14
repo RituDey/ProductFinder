@@ -22,8 +22,8 @@ restService.post('/finditem', function(req, res) {
  var GoogleSpreadsheet = require('google-spreadsheet');
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
- var input = req.body.result.parameters.any ;
- var newinput = input.toLowerCase();
+ var input = req.body.result.parameters.any.toLowerCase() ;
+// var newinput = input.toLowerCase();
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -50,15 +50,15 @@ restService.post('/finditem', function(req, res) {
 			var string1 = "";																		   
 			for (let row1 in data1) {
 				var prod = {};
-				var productname = data1[row1].product;
-				var newproductname = productname.toLowerCase();
+				var productname = data1[row1].product.toLowerCase();
+				//var newproductname = productname.toLowerCase();
 				var aisleno = data1[row1]['aisle'].toLowerCase();
-				 if(newinput == newproductname && !(aisleno.includes("aisle"))){
+				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod.aisle = aisleno;
 					var myJSON = JSON.stringify(prod);
 					myJSON = myJSON.replace(/[{}]/g, '');
 					string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
-				}else if (newinput == newproductname && aisleno.includes("aisle")) {
+				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				       var myJSON = JSON.stringify(prod);
 				       myJSON = myJSON.replace(/[{}]/g, '');
