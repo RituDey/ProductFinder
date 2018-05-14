@@ -55,19 +55,19 @@ var input = "Bags";
 					prod.aisle = aisleno;
 					 myString = JSON.stringify(prod);
 					myString = myString.replace(/[{}]/g, '');
-					//string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
+					string1 = string1 + data1[row1].product + " can be found in "  +  myString +  ' ; ';
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				        myString = JSON.stringify(prod);
 				       myString = myString.replace(/[{}]/g, '');
-				       //string1 =  " It is available "  +  myJSON +  ' ; ';
+				       string1 =  " It is available "  +  myString +  ' ; ';
 				}
 				
 		}
 				
 	       return res.json({
                     
-			"speech": "",
+			"speech": string1,
 			/*"messages": [
 			{
 			"type": 0,
