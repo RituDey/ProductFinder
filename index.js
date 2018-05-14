@@ -53,19 +53,19 @@ restService.post('/finditem', function(req, res) {
 					prod.aisle = aisleno;
 					var myJSON = JSON.stringify(prod);
 					myJSON = myJSON.replace(/[{}]/g, '');
-					string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
+					//string1 = string1 + data1[row1].product + " can be found in "  +  myJSON +  ' ; ';
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				       var myJSON = JSON.stringify(prod);
 				       myJSON = myJSON.replace(/[{}]/g, '');
-				       string1 =  " It is available "  +  myJSON +  ' ; ';
+				       //string1 =  " It is available "  +  myJSON +  ' ; ';
 				}
 				
 		}
 				
 	       return res.json({
                     
-			"speech": string1,
+			"speech": "",
 			/*"messages": [
 			{
 			"type": 0,
@@ -77,6 +77,8 @@ restService.post('/finditem', function(req, res) {
 			}
 			],*/
 		       //"parameters":{"param1":"Hi","qty":2,"param2":"Hello"},
+		       "qty":3,
+		       "param1":"Hi",
 			"source": "webhook-echo-one"
 		       
 			
