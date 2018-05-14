@@ -80,13 +80,9 @@ restService.post('/finditem', function(req, res) {
 			{
 			"name": "webhookparam",
 		        "lifespan":2,
-			"parameters":{"qty":2}
+			"parameters":"myJSON"
 			}],
 			
-			
-		       //"parameters":{"param1":"Hi","qty":2,"param2":"Hello"},
-		      // "qty":3,
-		       //"param1":"Hi",
 			"source": "webhook-echo-one"
 		       
 			
