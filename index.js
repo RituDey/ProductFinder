@@ -2,9 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const restService = express();
-//var dateFormat = require('dateformat');
 var http = require('https');
-//var os = require('os');
 
 restService.use(
   bodyParser.urlencoded({
@@ -23,7 +21,6 @@ restService.post('/finditem', function(req, res) {
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
  var input = req.body.result.parameters.any.toLowerCase() ;
-// var newinput = input.toLowerCase();
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -51,7 +48,6 @@ restService.post('/finditem', function(req, res) {
 			for (let row1 in data1) {
 				var prod = {};
 				var productname = data1[row1].product.toLowerCase();
-				//var newproductname = productname.toLowerCase();
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod.aisle = aisleno;
