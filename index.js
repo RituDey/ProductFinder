@@ -12,7 +12,7 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-restService.post('/finditem', function(req, res) {
+restService.get('/finditem', function(req, res) {
     //console.log('=============' + req.body.result.action)
     
  var resp = {},
@@ -20,8 +20,8 @@ restService.post('/finditem', function(req, res) {
  var GoogleSpreadsheet = require('google-spreadsheet');
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
-var input = req.body.result.parameters.param1.toLowerCase() ;
-//var input = "Bags";
+//var input = req.body.result.parameters.param1.toLowerCase() ;
+var input = "Bags";
  //var myString = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
