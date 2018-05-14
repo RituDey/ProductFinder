@@ -82,7 +82,7 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 			{
 			"name": "webhookparam",
 		        "lifespan":2,
-			"parameters":{"loca":"hi"}
+			"parameters":{"loca":myString}
 			}],
 			
 			"source": "webhook-echo-one",
