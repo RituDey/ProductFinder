@@ -53,14 +53,14 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod.aisle = aisleno;
-					 prod.toString();
+					prod.toString();
 					 //myString = JSON.stringify(prod);
 					//myString = myString.replace(/[{}]/g, '');
 					//string1 = string1 + data1[row1].product + " can be found in "  +  myString +  ' ; ';
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
-				        myString = JSON.stringify(prod);
-				       myString = myString.replace(/[{}]/g, '');
+				       // myString = JSON.stringify(prod);
+				      // myString = myString.replace(/[{}]/g, '');
 				      // string1 =  " It is available "  +  myString +  ' ; ';
 				}
 				
@@ -83,7 +83,7 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 			{
 			"name": "webhookparam",
 		        "lifespan":2,
-			"parameters":{"loca":myString}
+			"parameters":{"loca":prod}
 			}],
 			
 			"source": "webhook-echo-one",
