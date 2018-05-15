@@ -60,7 +60,7 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				        myString = JSON.stringify(prod);
-				       myString = myString.replace(/\":/g, "");
+				       myString = myString.replace(/\"/g, "");
 				      // string1 =  " It is available "  +  myString +  ' ; ';
 				}
 				
