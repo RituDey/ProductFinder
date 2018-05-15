@@ -21,7 +21,6 @@ restService.post('/finditem', function(req, res) {
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
  var input = req.body.result.parameters.param1.toLowerCase() ;
- // input = input.replace("&","and");
  var myString = "";
  var flag = 0;
  doc.useServiceAccountAuth(creds, function (err) {
@@ -67,16 +66,12 @@ restService.post('/finditem', function(req, res) {
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
 				       string1 = string1 + " You can find it " +  myString +  ';'; 
-				}/*else if (string1 == "") { 
-				      
-				      string1 = string1 + "Product is not available " + ';';
-				      
-				}*/
+				}
 				
 		}
-		if(flag <= 0){
-		    string1 = string1 + "Product is not available " + ';';
-		}		
+			if(flag <= 0){
+			    string1 = string1 + "Product is not available " + ';';
+			}		
 	       return res.json({
                     
 			"speech": string1,
