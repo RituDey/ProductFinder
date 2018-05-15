@@ -55,14 +55,14 @@ restService.post('/finditem', function(req, res) {
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
-					string1 = string1 + " It is available in " +  myString  
+					string1 = string1 + " It is available in " +  myString ;  
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
-				       string1 = string1 + " You can find it " +  myString 
+				       string1 = string1 + " You can find it " +  myString ; 
 				}else {
-				       string1 = string1 + "Product is not available" 
+				       string1 = string1 + "Product is not available" ; 
 				}
 				
 		}
