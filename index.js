@@ -53,16 +53,15 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod = aisleno;
-					// prod.toString();
-					 myString = JSON.stringify(prod);
+					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
-					 myString = "aisle" + myString ;
-					//string1 = string1 + data1[row1].product + " can be found in "  +  myString +  ' ; ';
+					myString = "aisle" + "" + myString ;
+					
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
-				        myString = JSON.stringify(prod);
+				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
-				      // string1 =  " It is available "  +  myString +  ' ; ';
+				      
 				}
 				
 		}
