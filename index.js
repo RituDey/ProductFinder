@@ -63,13 +63,16 @@ restService.post('/finditem', function(req, res) {
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
 				       string1 = string1 + " You can find it " +  myString +  ';'; 
-				}else if (string1 == "") { 
-				      break;
+				}/*else if (string1 == "") { 
+				      
 				      string1 = string1 + "Product is not available " + ';';
 				      
-				}
+				}*/
+				return output;
 		}
-				
+		if (output == ""){
+		     string1 = string1 + "Product is not available " + ';';
+		}		
 	       return res.json({
                     
 			"speech": string1,
