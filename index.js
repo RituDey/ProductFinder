@@ -49,14 +49,17 @@ restService.post('/finditem', function(req, res) {
 			for (let row1 in data1) {
 				var prod = {};
 				var productname = data1[row1].product.toLowerCase();
+				if (productname.includes("&"){
+				    var product = productname.replace("&","and");
+				    }
 				var aisleno = data1[row1]['aisle'].toLowerCase();
-				 if(input == productname && !(aisleno.includes("aisle"))){
+				 if(input == product && !(aisleno.includes("aisle"))){
 					prod = aisleno;
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
 					string1 = string1 + " It is available in " +  myString + ';';  
-				}else if (input == productname && aisleno.includes("aisle")) {
+				}else if (input == product && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
