@@ -71,7 +71,7 @@ restService.post('/finditem', function(req, res) {
 				
 		}
 			if(flag <= 0){
-			    string1 = string1 + "Product is not available " + ';';
+			    string1 = string1 + "Currently this product is not available in our store " + ';';
 			}		
 	       return res.json({
                     
