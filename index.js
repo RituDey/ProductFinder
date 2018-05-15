@@ -22,6 +22,7 @@ restService.post('/finditem', function(req, res) {
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
  var input = req.body.result.parameters.param1.toLowerCase() ;
  var myString = "";
+ var product = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -50,7 +51,7 @@ restService.post('/finditem', function(req, res) {
 				var prod = {};
 				var productname = data1[row1].product.toLowerCase();
 				if (productname.includes("&"){
-				    var product = productname.replace("&","and");
+				     product = productname.replace("&","and");
 				    }
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if(input == product && !(aisleno.includes("aisle"))){
