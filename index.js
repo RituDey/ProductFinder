@@ -46,7 +46,8 @@ restService.post('/finditem', function(req, res) {
     else {
     
 			var data1 = rows1;
-			var string1 = "";																		   
+			var string1 = "";
+	                //var output = ["Saab", "Volvo", "BMW"];
 			for (let row1 in data1) {
 				var prod = {};
 				var productname = data1[row1].product.toLowerCase();
