@@ -55,7 +55,7 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 					prod = aisleno;
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
-					myString = "aisle" + "" + myString ;
+					myString = "aisle " + myString ;
 					
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
