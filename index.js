@@ -20,8 +20,7 @@ restService.post('/finditem', function(req, res) {
  var GoogleSpreadsheet = require('google-spreadsheet');
  var creds = require('./client_secret.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
-var input = req.body.result.parameters.param1.toLowerCase() ;
-//var input = "bags";
+ var input = req.body.result.parameters.param1.toLowerCase() ;
  var myString = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
@@ -56,12 +55,12 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
-					
+					string1 = string1 + " It is available in " +  myString +  ' ; ' 
 				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
-				      
+				       string1 = string1 + " You can find it " +  myString +  ' ; '
 				}
 				
 		}
@@ -69,23 +68,6 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 	       return res.json({
                     
 			"speech": "",
-			/*"messages": [
-			{
-			"type": 0,
-			"speech": "my first response"
-			},
-			{
-			"type": 0,
-			"speech": "my second response"
-			}
-			],*/
-		       "contextOut": [
-			{
-			"name": "testparameter",
-		        "lifespan":2,
-			"parameters":{"loca":myString}
-			}],
-			
 			"source": "webhook-echo-one",
 		       
 			
