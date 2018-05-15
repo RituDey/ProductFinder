@@ -63,7 +63,7 @@ restService.post('/finditem', function(req, res) {
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
 				       string1 = string1 + " You can find it " +  myString +  ';'; 
-				}else if ((input.replace("&","and")) !== productname) { 
+				}else  { 
 				
 				      string1 = string1 + "Product is not available " + ';';
 				
