@@ -58,7 +58,7 @@ restService.post('/finditem', function(req, res) {
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
 					string1 = string1 + " It is available in " +  myString + ';';  
-				}else if (input == productname && aisleno.includes("aisle")) {
+				}else if ((input.replace("&","and")) == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
