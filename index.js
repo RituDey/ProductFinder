@@ -67,7 +67,7 @@ restService.post('/finditem', function(req, res) {
 				
 	       return res.json({
                     
-			"speech": "",
+			"speech": string1,
 			"source": "webhook-echo-one",
 		       
 			
