@@ -23,6 +23,7 @@ restService.post('/finditem', function(req, res) {
  var input = req.body.result.parameters.param1.toLowerCase() ;
  // input = input.replace("&","and");
  var myString = "";
+ var flag = 0;
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -53,12 +54,15 @@ restService.post('/finditem', function(req, res) {
 				productname = productname.replace("&","and");
 				var aisleno = data1[row1]['aisle'].toLowerCase();
 				 if((input.replace("&","and")) == productname && !(aisleno.includes("aisle"))){
+					flag++;
 					prod = aisleno;
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
-					string1 = string1 + " It is available in " +  myString + ';';  
+					string1 = string1 + " It is available in " +  myString + ';';
+					
 				}else if ((input.replace("&","and")) == productname && aisleno.includes("aisle")) {
+				       flag++;
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
@@ -68,10 +72,10 @@ restService.post('/finditem', function(req, res) {
 				      string1 = string1 + "Product is not available " + ';';
 				      
 				}*/
-				return output;
+				
 		}
-		if (output == ""){
-		     string1 = string1 + "Product is not available " + ';';
+		if(flag <= 0){
+		    string1 = string1 + "Product is not available " + ';';
 		}		
 	       return res.json({
                     
