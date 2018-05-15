@@ -66,7 +66,7 @@ restService.post('/finditem', function(req, res) {
 				}else  { 
 				
 				      string1 = string1 + "Product is not available " + ';';
-				
+				      break;
 				}
 		}
 				
