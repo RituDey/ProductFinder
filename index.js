@@ -81,7 +81,7 @@ var input = req.body.result.parameters.param1.toLowerCase() ;
 			],*/
 		       "contextOut": [
 			{
-			"name": "webhookparam",
+			"name": "testparameter",
 		        "lifespan":2,
 			"parameters":{"loca":myString}
 			}],
