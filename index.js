@@ -22,7 +22,6 @@ restService.post('/finditem', function(req, res) {
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
  var input = req.body.result.parameters.param1.toLowerCase() ;
  var myString = "";
- var product = "";
  doc.useServiceAccountAuth(creds, function (err) {
   if (err) {
    console.log(err);
@@ -50,17 +49,17 @@ restService.post('/finditem', function(req, res) {
 			for (let row1 in data1) {
 				var prod = {};
 				var productname = data1[row1].product.toLowerCase();
-				if (productname.includes("&"){
-				     product = productname.replace("&","and");
-				    }
+				
+				     productname = productname.replace("&","and");
+				  
 				var aisleno = data1[row1]['aisle'].toLowerCase();
-				 if(input == product && !(aisleno.includes("aisle"))){
+				 if(input == productname && !(aisleno.includes("aisle"))){
 					prod = aisleno;
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
 					string1 = string1 + " It is available in " +  myString + ';';  
-				}else if (input == product && aisleno.includes("aisle")) {
+				}else if (input == productname && aisleno.includes("aisle")) {
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
