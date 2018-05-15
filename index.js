@@ -64,7 +64,7 @@ restService.post('/finditem', function(req, res) {
 				       myString = myString.replace(/\"/g, "");
 				       string1 = string1 + " You can find it " +  myString +  ';'; 
 				}else if (string1 == "") { 
-				
+				      break;
 				      string1 = string1 + "Product is not available " + ';';
 				      
 				}
