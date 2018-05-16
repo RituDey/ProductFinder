@@ -122,7 +122,7 @@ restService.post('/getproduct', function(req, res) {
     
 			var data1 = rows1;
 			var string1 = "";
-	                var output = ["It is available in", "You can get it in", "It is located in","It is in"];
+	                var output = ["It is available in ", "You can get it in ", "It is located in ","It is in "];
 	                var randoutput = output[Math.floor(Math.random() * output.length)];
 			for (let row1 in data1) {
 				var prod = {};
