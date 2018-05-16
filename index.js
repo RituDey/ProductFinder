@@ -18,7 +18,7 @@ restService.post('/finditem', function(req, res) {
  var resp = {},
  ret = '';
  var GoogleSpreadsheet = require('google-spreadsheet');
- var creds = require('./client_secret.json');
+ var creds = require('./client_secret_dev.json');
  var doc = new GoogleSpreadsheet('1IdnXQFjBUDngUPpzmnW6eJ68Lqk8oTUCA6NISxanAW0');
  var input = req.body.result.parameters.param1.toLowerCase() ;
  var myString = "";
@@ -93,7 +93,7 @@ restService.post('/getproduct', function(req, res) {
  var resp = {},
  ret = '';
  var GoogleSpreadsheet = require('google-spreadsheet');
- var creds = require('./client_secret.json');
+ var creds = require('./client_secret_main.json');
  var doc = new GoogleSpreadsheet('1sS52vZsiJ_ZVJxuW4U1YKHHruj4mdLV4ETTsTfsQKhQ');
  var input = req.body.result.parameters.param1.toLowerCase() ;
  var myString = "";
