@@ -122,8 +122,8 @@ restService.post('/getproduct', function(req, res) {
     
 			var data1 = rows1;
 			var string1 = "";
-	                var output = ["It is available in ", "You can get it in ", "It is located in ","It is in "];
-	                var randoutput = output[Math.floor(Math.random() * output.length)];
+	               // var output = ["It is available in ", "You can get it in ", "It is located in ","It is in "];
+	                //var randoutput = output[Math.floor(Math.random() * output.length)];
 			for (let row1 in data1) {
 				var prod = {};
 				var productname = data1[row1].product.toLowerCase();
@@ -135,14 +135,16 @@ restService.post('/getproduct', function(req, res) {
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
-					string1 = string1 + randoutput +  myString + ';';
+					//string1 = string1 + randoutput +  myString + ';';
+					string1 = string1 + " You can find " + input + " in " +  myString + ';';
 					
 				}else if ((input.replace("&","and")) == productname && aisleno.includes("aisle")) {
 				       flag++;
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
-				       string1 = string1 + " You can find it " +  myString +  ';'; 
+				       //string1 = string1 + " You can find it " +  myString +  ';';
+				       string1 = string1 + " You can find " + input + " " + myString +  ';';
 				}
 				
 		}
