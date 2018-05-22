@@ -66,7 +66,7 @@ restService.post('/finditem', function(req, res) {
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
-				       string1 = string1 + " You can find " + input +  myString +  ';'; 
+				       string1 = string1 + " You can find " + input + "" + myString +  ';'; 
 				}
 				
 		}
