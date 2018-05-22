@@ -59,14 +59,14 @@ restService.post('/finditem', function(req, res) {
 					myString = JSON.stringify(prod);
 					myString = myString.replace(/\"/g, "");
 					myString = "aisle " + myString ;
-					string1 = string1 + " It is available in " +  myString + ';';
+					string1 = string1 + " You can find " + input + " in " +  myString + ';';
 					
 				}else if ((input.replace("&","and")) == productname && aisleno.includes("aisle")) {
 				       flag++;
 				       prod = aisleno;
 				       myString = JSON.stringify(prod);
 				       myString = myString.replace(/\"/g, "");
-				       string1 = string1 + " You can find it " +  myString +  ';'; 
+				       string1 = string1 + " You can find " + input +  myString +  ';'; 
 				}
 				
 		}
